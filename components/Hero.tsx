@@ -86,16 +86,16 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Right: logo */}
+          {/* Logo */}
           <motion.div
             variants={item}
             animate={{ y: [0, -12, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-            className="hidden lg:flex items-center justify-center relative"
+            className="flex items-center justify-center relative order-first lg:order-none mb-2 lg:mb-0"
           >
             <motion.div
               aria-hidden
-              className="absolute inset-8 rounded-full bg-brand-300/40 blur-3xl"
+              className="absolute inset-4 sm:inset-8 rounded-full bg-brand-300/40 blur-3xl"
               animate={{ scale: [1, 1.15, 1], opacity: [0.5, 0.8, 0.5] }}
               transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
             />
@@ -105,7 +105,7 @@ export default function Hero() {
                 alt="Redbud Websites"
                 width={1349}
                 height={720}
-                className="w-full max-w-md rounded-3xl shadow-2xl shadow-brand-900/20 border border-white/60"
+                className="w-full max-w-[240px] sm:max-w-sm lg:max-w-md rounded-3xl shadow-2xl shadow-brand-900/20 border border-white/60"
               />
             </SpotlightCard>
           </motion.div>
