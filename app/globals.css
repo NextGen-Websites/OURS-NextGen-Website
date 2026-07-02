@@ -4,5 +4,5 @@
 
 @layer base {
   html { scroll-behavior: smooth; }
-  body { @apply text-gray-900 antialiased; }
+  body { @apply text-ink-900 bg-cream-50 antialiased; }
 }

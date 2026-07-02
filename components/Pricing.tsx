@@ -1,3 +1,7 @@
+'use client'
+
+import { motion } from 'motion/react'
+
 const plans = [
   {
     name: 'Website Build',
@@ -57,41 +61,59 @@ export default function Pricing() {
   return (
     <section id="pricing" className="bg-white py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Simple, honest pricing</h2>
-          <p className="text-gray-500 mt-3 text-lg">No hidden fees. No hourly billing. No surprises.</p>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-ink-900">Simple, honest pricing</h2>
+          <p className="text-ink-500 mt-3 text-lg">No hidden fees. No hourly billing. No surprises.</p>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: '-80px' }}
+          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.12 } } }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch"
+        >
           {plans.map((plan) => (
-            <div
+            <motion.div
               key={plan.name}
-              className={`rounded-2xl p-8 border flex flex-col ${
+              variants={{ hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
+              whileHover={{ y: -6 }}
+              className={`rounded-2xl p-8 border flex flex-col transition-shadow ${
                 plan.highlight
-                  ? 'border-brand-500 bg-brand-600 text-white shadow-xl shadow-brand-900/20'
-                  : 'border-gray-200 bg-white'
+                  ? 'border-brand-600 bg-brand-600 text-white shadow-xl shadow-brand-900/20'
+                  : 'border-cream-200 bg-white hover:shadow-lg'
               }`}
             >
               {plan.highlight && (
-                <span className="inline-block bg-white/20 text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4 self-start">
+                <motion.span
+                  animate={{ opacity: [1, 0.7, 1] }}
+                  transition={{ duration: 2.5, repeat: Infinity }}
+                  className="inline-block bg-white/20 text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4 self-start"
+                >
                   Most Popular
-                </span>
+                </motion.span>
               )}
-              <h3 className={`text-xl font-bold mb-1 ${plan.highlight ? 'text-white' : 'text-gray-900'}`}>
+              <h3 className={`text-xl font-bold mb-1 ${plan.highlight ? 'text-white' : 'text-ink-900'}`}>
                 {plan.name}
               </h3>
               <div className="flex items-end gap-1 mb-1">
-                <span className={`text-4xl font-bold ${plan.highlight ? 'text-white' : 'text-gray-900'}`}>
+                <span className={`text-4xl font-bold ${plan.highlight ? 'text-white' : 'text-ink-900'}`}>
                   {plan.price}
                 </span>
-                <span className={`text-sm mb-1 ${plan.highlight ? 'text-brand-200' : 'text-gray-500'}`}>
+                <span className={`text-sm mb-1 ${plan.highlight ? 'text-brand-100' : 'text-ink-500'}`}>
                   {plan.period}
                 </span>
               </div>
-              <p className={`text-xs font-medium mb-3 ${plan.highlight ? 'text-brand-200' : 'text-brand-600'}`}>
+              <p className={`text-xs font-medium mb-3 ${plan.highlight ? 'text-brand-100' : 'text-brand-600'}`}>
                 {plan.split}
               </p>
-              <p className={`text-sm mb-7 ${plan.highlight ? 'text-brand-100' : 'text-gray-500'}`}>
+              <p className={`text-sm mb-7 ${plan.highlight ? 'text-brand-100' : 'text-ink-500'}`}>
                 {plan.description}
               </p>
 
@@ -101,28 +123,36 @@ export default function Pricing() {
                     <svg className={`w-4 h-4 mt-0.5 flex-shrink-0 ${plan.highlight ? 'text-brand-200' : 'text-brand-600'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className={plan.highlight ? 'text-brand-100' : 'text-gray-600'}>{f}</span>
+                    <span className={plan.highlight ? 'text-brand-100' : 'text-ink-700'}>{f}</span>
                   </li>
                 ))}
               </ul>
 
-              <a
+              <motion.a
                 href="#contact"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
                 className={`block text-center py-3 rounded-lg font-semibold transition-colors mt-auto ${
                   plan.highlight
                     ? 'bg-white text-brand-700 hover:bg-brand-50'
-                    : 'bg-brand-600 text-white hover:bg-brand-700'
+                    : 'bg-brand-500 text-white hover:bg-brand-600'
                 }`}
               >
                 {plan.cta}
-              </a>
-            </div>
+              </motion.a>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <p className="text-center text-gray-400 text-sm mt-10">
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-center text-ink-400 text-sm mt-10"
+        >
           Care plans are optional and can be added anytime. Domain not included (~$15/yr).
-        </p>
+        </motion.p>
       </div>
     </section>
   )
