@@ -1,51 +1,52 @@
 const plans = [
   {
-    name: 'Starter Site',
-    price: '$1,000',
-    period: 'one-time',
-    description: 'Everything you need to get online and look professional.',
+    name: 'Website Build',
+    price: '$500',
+    period: 'to start',
+    description: '$500 upfront to kick things off, $500 when your site is ready to launch. No surprises.',
     features: [
       'Custom-designed website (5–7 pages)',
       'Mobile-first, fast-loading',
-      'Contact form (email leads directly to you)',
+      'Contact form (leads sent directly to you)',
       'Google Maps embed',
       'Social links + click-to-call',
       'SEO meta tags set up',
-      'Deployed to Vercel (free hosting)',
+      'Deployed & live within one week',
       '1 round of revisions included',
     ],
     cta: 'Get Started',
     highlight: false,
   },
   {
-    name: 'Starter + Care Plan',
-    price: '$1,000',
-    period: '+ $150/mo',
-    description: 'Build your site and keep it maintained — hands off for you.',
+    name: 'Care Plan Basic',
+    price: '$100',
+    period: '/month',
+    description: "We keep your site running and handle up to 3 edits a month — you don't touch a thing.",
     features: [
-      'Everything in Starter Site',
       'Hosting managed on our end',
       'Up to 3 content updates/month',
       'Same-week turnaround on changes',
+      'Security & uptime monitoring',
+      'Priority support',
+    ],
+    cta: 'Add to My Site',
+    highlight: false,
+  },
+  {
+    name: 'Care Plan Pro',
+    price: '$250',
+    period: '/month',
+    description: 'Unlimited edits, full maintenance — we handle everything so you can focus on your business.',
+    features: [
+      'Hosting managed on our end',
+      'Unlimited content updates',
+      'Same-week turnaround on changes',
+      'Security & uptime monitoring',
       'Annual design refresh',
       'Priority support',
     ],
-    cta: 'Best Value — Get Started',
+    cta: 'Add to My Site',
     highlight: true,
-  },
-  {
-    name: 'Care Plan Only',
-    price: '$150',
-    period: '/month',
-    description: "Already have a site? We'll maintain it for you.",
-    features: [
-      'Up to 3 content updates/month',
-      'Hosting managed on our end',
-      'Same-week turnaround on changes',
-      'Priority support',
-    ],
-    cta: 'Get Started',
-    highlight: false,
   },
 ]
 
@@ -114,7 +115,7 @@ export default function Pricing() {
         </div>
 
         <p className="text-center text-gray-400 text-sm mt-10">
-          All projects require a 50% deposit upfront. Domain not included (usually ~$15/yr).
+          Website build is $500 upfront + $500 on delivery. Care plans are optional and can be added anytime. Domain not included (~$15/yr).
         </p>
       </div>
     </section>
