@@ -45,8 +45,8 @@ export default function Hero() {
           {/* Right: logo */}
           <div className="hidden lg:flex items-center justify-center">
             <Image
-              src="/logo.png"
-              alt="NextGen Websites"
+              src="/Logo2.jpg"
+              alt="Redbud Websites"
               width={420}
               height={420}
               className="w-full max-w-sm rounded-3xl"

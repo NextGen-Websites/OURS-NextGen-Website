@@ -10,7 +10,7 @@ export default function Nav() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <span className="text-white font-bold text-lg tracking-tight">
-            NextGen <span className="text-brand-500">Websites</span>
+            Redbud <span className="text-brand-500">Websites</span>
           </span>
 
           <div className="hidden md:flex items-center gap-7">
