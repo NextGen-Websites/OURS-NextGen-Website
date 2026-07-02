@@ -2,6 +2,8 @@
 
 import Image from 'next/image'
 import { motion, type Variants } from 'motion/react'
+import Magnetic from './Magnetic'
+import SpotlightCard from './SpotlightCard'
 
 const container: Variants = {
   hidden: {},
@@ -57,18 +59,22 @@ export default function Hero() {
             </motion.p>
 
             <motion.div variants={item} className="flex flex-col sm:flex-row gap-4">
-              <motion.a href="#contact"
-                 whileHover={{ scale: 1.03 }}
-                 whileTap={{ scale: 0.97 }}
-                 className="inline-flex items-center justify-center bg-brand-500 text-white px-8 py-4 rounded-lg font-bold text-lg shadow-sm hover:bg-brand-600 hover:shadow-lg transition-colors">
-                Get a Free Quote
-              </motion.a>
-              <motion.a href="#how-it-works"
-                 whileHover={{ scale: 1.03 }}
-                 whileTap={{ scale: 0.97 }}
-                 className="inline-flex items-center justify-center border border-ink-900/15 text-ink-700 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-cream-200/60 transition-colors">
-                See How It Works
-              </motion.a>
+              <Magnetic strength={0.3}>
+                <motion.a href="#contact"
+                   whileHover={{ scale: 1.03 }}
+                   whileTap={{ scale: 0.97 }}
+                   className="glow-btn inline-flex items-center justify-center bg-brand-500 text-white px-8 py-4 rounded-lg font-bold text-lg shadow-sm hover:bg-brand-600 transition-colors">
+                  Get a Free Quote
+                </motion.a>
+              </Magnetic>
+              <Magnetic strength={0.3}>
+                <motion.a href="#how-it-works"
+                   whileHover={{ scale: 1.03 }}
+                   whileTap={{ scale: 0.97 }}
+                   className="inline-flex items-center justify-center border border-ink-900/15 text-ink-700 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-cream-200/60 transition-colors">
+                  See How It Works
+                </motion.a>
+              </Magnetic>
             </motion.div>
 
             <motion.div variants={item} className="flex flex-wrap gap-x-8 gap-y-3 mt-14">
@@ -85,15 +91,23 @@ export default function Hero() {
             variants={item}
             animate={{ y: [0, -12, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-            className="hidden lg:flex items-center justify-center"
+            className="hidden lg:flex items-center justify-center relative"
           >
-            <Image
-              src="/Logo3.jpg"
-              alt="Redbud Websites"
-              width={1349}
-              height={720}
-              className="w-full max-w-md rounded-3xl shadow-2xl shadow-brand-900/10"
+            <motion.div
+              aria-hidden
+              className="absolute inset-8 rounded-full bg-brand-300/40 blur-3xl"
+              animate={{ scale: [1, 1.15, 1], opacity: [0.5, 0.8, 0.5] }}
+              transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
             />
+            <SpotlightCard className="relative rounded-3xl">
+              <Image
+                src="/Logo3.jpg"
+                alt="Redbud Websites"
+                width={1349}
+                height={720}
+                className="w-full max-w-md rounded-3xl shadow-2xl shadow-brand-900/20 border border-white/60"
+              />
+            </SpotlightCard>
           </motion.div>
 
         </motion.div>

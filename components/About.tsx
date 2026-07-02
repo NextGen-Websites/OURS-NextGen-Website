@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'motion/react'
+import SpotlightCard from './SpotlightCard'
 
 const values = [
   { title: 'We move fast', body: 'Most agencies take 6–8 weeks. We deliver in one. Our process is built for speed without cutting corners.' },
@@ -49,10 +50,11 @@ export default function About() {
                 key={v.title}
                 variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
                 whileHover={{ y: -4 }}
-                className="bg-white border border-cream-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow"
               >
-                <h3 className="font-bold text-ink-900 mb-2">{v.title}</h3>
-                <p className="text-ink-500 text-sm leading-relaxed">{v.body}</p>
+                <SpotlightCard className="h-full bg-white border border-cream-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="font-bold text-ink-900 mb-2">{v.title}</h3>
+                  <p className="text-ink-500 text-sm leading-relaxed">{v.body}</p>
+                </SpotlightCard>
               </motion.div>
             ))}
           </motion.div>

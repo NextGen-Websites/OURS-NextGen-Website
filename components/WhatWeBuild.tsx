@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'motion/react'
+import SpotlightCard from './SpotlightCard'
 
 const niches = [
   {
@@ -58,18 +59,19 @@ export default function WhatWeBuild() {
               key={niche.name}
               variants={{ hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
               whileHover={{ y: -6 }}
-              className="bg-white rounded-xl p-6 border border-cream-200 shadow-sm hover:border-brand-200 hover:shadow-lg transition-all"
             >
-              <div className="text-3xl mb-4">{niche.icon}</div>
-              <h3 className="font-bold text-ink-900 mb-2">{niche.name}</h3>
-              <p className="text-ink-500 text-sm leading-relaxed mb-5">{niche.description}</p>
-              <div className="flex flex-wrap gap-2">
-                {niche.tags.map((tag) => (
-                  <span key={tag} className="text-xs bg-brand-50 text-brand-700 font-medium px-2 py-1 rounded-md">
-                    {tag}
-                  </span>
-                ))}
-              </div>
+              <SpotlightCard className="h-full bg-white rounded-xl p-6 border border-cream-200 shadow-sm hover:border-brand-200 hover:shadow-lg transition-all">
+                <div className="text-3xl mb-4">{niche.icon}</div>
+                <h3 className="font-bold text-ink-900 mb-2">{niche.name}</h3>
+                <p className="text-ink-500 text-sm leading-relaxed mb-5">{niche.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {niche.tags.map((tag) => (
+                    <span key={tag} className="text-xs bg-brand-50 text-brand-700 font-medium px-2 py-1 rounded-md">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </SpotlightCard>
             </motion.div>
           ))}
         </motion.div>

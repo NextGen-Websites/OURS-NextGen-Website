@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence, useScroll, useTransform } from 'motion/react'
+import Magnetic from './Magnetic'
 
 const links = [
   { href: '#how-it-works', label: 'How It Works' },
@@ -19,7 +20,7 @@ export default function Nav() {
   return (
     <motion.nav
       style={{ boxShadow: navShadow, borderColor: navBorder }}
-      className="sticky top-0 z-50 bg-cream-50/90 backdrop-blur-md border-b"
+      className="sticky top-0 z-50 bg-cream-50/60 backdrop-blur-xl border-b"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -47,17 +48,19 @@ export default function Nav() {
                 <span className="absolute left-0 -bottom-1 h-px w-0 bg-brand-500 transition-all duration-300 group-hover:w-full" />
               </motion.a>
             ))}
-            <motion.a
-              href="#contact"
-              initial={{ opacity: 0, y: -6 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.3 }}
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.97 }}
-              className="bg-brand-500 text-white px-5 py-2 rounded-lg text-sm font-semibold shadow-sm hover:bg-brand-600 hover:shadow-md transition-colors"
-            >
-              Get a Free Quote
-            </motion.a>
+            <Magnetic strength={0.4}>
+              <motion.a
+                href="#contact"
+                initial={{ opacity: 0, y: -6 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.3 }}
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.97 }}
+                className="glow-btn inline-block bg-brand-500 text-white px-5 py-2 rounded-lg text-sm font-semibold shadow-sm hover:bg-brand-600 transition-colors"
+              >
+                Get a Free Quote
+              </motion.a>
+            </Magnetic>
           </div>
 
           <button onClick={() => setOpen(!open)} className="md:hidden p-2 text-ink-700" aria-label="Toggle menu">

@@ -1,6 +1,8 @@
 'use client'
 
 import { motion } from 'motion/react'
+import SpotlightCard from './SpotlightCard'
+import Magnetic from './Magnetic'
 
 const plans = [
   {
@@ -84,7 +86,11 @@ export default function Pricing() {
               key={plan.name}
               variants={{ hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
               whileHover={{ y: -6 }}
-              className={`rounded-2xl p-8 border flex flex-col transition-shadow ${
+              className="h-full"
+            >
+            <SpotlightCard
+              glow={plan.highlight ? 'rgba(255,255,255,0.25)' : 'rgba(214,54,143,0.16)'}
+              className={`h-full rounded-2xl p-8 border flex flex-col transition-shadow ${
                 plan.highlight
                   ? 'border-brand-600 bg-brand-600 text-white shadow-xl shadow-brand-900/20'
                   : 'border-cream-200 bg-white hover:shadow-lg'
@@ -128,18 +134,21 @@ export default function Pricing() {
                 ))}
               </ul>
 
-              <motion.a
-                href="#contact"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                className={`block text-center py-3 rounded-lg font-semibold transition-colors mt-auto ${
-                  plan.highlight
-                    ? 'bg-white text-brand-700 hover:bg-brand-50'
-                    : 'bg-brand-500 text-white hover:bg-brand-600'
-                }`}
-              >
-                {plan.cta}
-              </motion.a>
+              <Magnetic strength={0.2} className="mt-auto w-full">
+                <motion.a
+                  href="#contact"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                  className={`block text-center py-3 rounded-lg font-semibold transition-colors w-full ${
+                    plan.highlight
+                      ? 'bg-white text-brand-700 hover:bg-brand-50'
+                      : 'glow-btn bg-brand-500 text-white hover:bg-brand-600'
+                  }`}
+                >
+                  {plan.cta}
+                </motion.a>
+              </Magnetic>
+            </SpotlightCard>
             </motion.div>
           ))}
         </motion.div>

@@ -7,7 +7,7 @@ export default function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="bg-cream-100 border-t border-cream-200 text-ink-500 py-10">
+    <footer className="bg-cream-100/70 backdrop-blur-xl border-t border-white/60 text-ink-500 py-10">
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}

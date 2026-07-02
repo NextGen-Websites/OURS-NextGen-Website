@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'motion/react'
+import Magnetic from './Magnetic'
 
 const steps = [
   {
@@ -70,12 +71,14 @@ export default function HowItWorks() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="text-center mt-14"
         >
-          <motion.a href="#contact"
-             whileHover={{ scale: 1.03 }}
-             whileTap={{ scale: 0.97 }}
-             className="inline-flex items-center gap-2 bg-brand-500 text-white px-8 py-4 rounded-lg font-semibold shadow-sm hover:bg-brand-600 hover:shadow-md transition-colors">
-            Start the Process →
-          </motion.a>
+          <Magnetic strength={0.3}>
+            <motion.a href="#contact"
+               whileHover={{ scale: 1.03 }}
+               whileTap={{ scale: 0.97 }}
+               className="glow-btn inline-flex items-center gap-2 bg-brand-500 text-white px-8 py-4 rounded-lg font-semibold shadow-sm hover:bg-brand-600 transition-colors">
+              Start the Process →
+            </motion.a>
+          </Magnetic>
         </motion.div>
       </div>
     </section>
