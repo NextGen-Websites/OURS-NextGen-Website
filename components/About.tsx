@@ -27,13 +27,13 @@ export default function About() {
             </h2>
             <div className="space-y-5 text-ink-500 text-lg leading-relaxed">
               <p>
-                Walk down any Main Street and you'll find great businesses with terrible websites — or no website at all. Not because they don't care, but because the quotes they got were $5,000 and six weeks away.
+                Walk down any Main Street and you'll find great businesses with terrible websites — or no website at all. Not because they don't care, but because the quotes they got were $5,000 and six weeks away from launching a site.
               </p>
               <p>
                 We built Redbud to fix that. Using modern tools and a tight process, we build professional sites in a week for a price that actually makes sense for a small business. Every site is custom — not a drag-and-drop template you could've built yourself.
               </p>
               <p>
-                We're a small team. That's on purpose. You'll always know who you're working with, and you'll always be able to reach us.
+                We're a small team with roots in a small town. We know what it's like to run a business where people still know your name — that's why you'll always know who you're working with, and you'll always be able to reach us.
               </p>
             </div>
           </motion.div>

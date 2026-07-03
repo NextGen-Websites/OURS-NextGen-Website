@@ -160,7 +160,7 @@ export default function Pricing() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-center text-ink-400 text-sm mt-10"
         >
-          Care plans are optional and can be added anytime. Domain not included (~$15/yr).
+          Care plans are optional and can be added anytime.
         </motion.p>
       </div>
     </section>
